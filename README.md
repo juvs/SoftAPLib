@@ -16,19 +16,22 @@ _TODO: update this README_
 
 ## Usage
 
-Connect XYZ hardware, add the SofAPLib library to your project and follow this simple example:
+Connect your hardware, add the SofAPLib library to your project and follow this simple example:
 
 ```
-#include "SofAPLib.h"
-SofAPLib sofAPLib;
+#include <SoftAPLib.h>
+
+// Initialize objects from the lib
+STARTUP(softap_set_application_page_handler(SoftAPLib::getPage, nullptr));
 
 void setup() {
-  sofAPLib.begin();
+
 }
 
 void loop() {
-  sofAPLib.process();
+
 }
+
 ```
 
 See the [examples](examples) folder for more details.
@@ -51,7 +54,7 @@ To compile an example, use `particle compile examples/usage` command in [Particl
 
 After your changes are done you can upload them with `particle library upload` or `Upload` command in the IDE. This will create a private (only visible by you) library that you can use in other projects. Do `particle library add SofAPLib_myname` to add the library to a project on your machine or add the SofAPLib_myname library to a project on the Web IDE or Desktop IDE.
 
-At this point, you can create a [GitHub pull request](https://help.github.com/articles/about-pull-requests/) with your changes to the original library. 
+At this point, you can create a [GitHub pull request](https://help.github.com/articles/about-pull-requests/) with your changes to the original library.
 
 If you wish to make your library public, use `particle library publish` or `Publish` command.
 
